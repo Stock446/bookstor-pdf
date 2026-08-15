@@ -1,20 +1,6 @@
 const docs = Array.from({length:100},(_,i)=>({
  id:i+1,
- title:`Document PDF ${String(i+1).padStart(3,'0')const documents = [
-  {
-    title: "Document existant",
-    ...
-  }, // 👈 N'oubliez pas cette virgule après le document précédent !
-
-  // 🔽 COLLEZ VOTRE NOUVEAU BLOC ICI (par exemple vers la ligne 15 ou 20) :
-  {
-    title: "Père riche, père pauvre",
-    description: "Ce que les parents riches enseignent à leurs enfants à propos de l'argent afin qu'il soit à leur service.",
-    price: "500 F CFA",
-    file: "pere-riche-pere-pauvre.pdf",
-    whatsappLink: "https://wa.me/2250594899704?text=Bonjour,%20je%20souhaite%20acheter%20le%20PDF%20:%20P%C3%A8re%20riche,%20p%C3%A8re%20pauvre"
-  }
-];
+ title:`Document PDF ${String(i+1).padStart(3,'0')
 }`,
  category:i%4===0?'Formation':i%4===1?'Business':i%4===2?'Études':'Développement personnel',
  price:500
