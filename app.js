@@ -1,4 +1,3 @@
-
 const customDocs = [
   {
     id: 1,
@@ -19,7 +18,7 @@ const customDocs = [
     title: "L'Alchimiste - Paulo Coelho",
     category: "Développement personnel",
     price: 500,
-    file: "L’Alchimiste Paulo Coelho﻿.pdf"
+    file: "L’Alchimiste Paulo Coelho.pdf"
   },
   {
     id: 4,
@@ -33,7 +32,7 @@ const customDocs = [
     title: "Un pied à l'école, un pied dans le business",
     category: "Business",
     price: 500,
-    file: "Un pied a l'école un pied dans le business .pdf"
+    file: "Un pied à l'école un pied dans le business .pdf"
   },
   {
     id: 6,
