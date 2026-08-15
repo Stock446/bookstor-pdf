@@ -18,14 +18,14 @@ const customDocs = [
     title: "L'Alchimiste - Paulo Coelho",
     category: "Développement personnel",
     price: 500,
-    file: "L’Alchimiste Paulo Coelho.pdf"
+    file: "L'Alchimiste Paulo Coelho.pdf"
   },
   {
     id: 4,
     title: "Père riche, père pauvre",
     category: "Finance",
     price: 500,
-    file: "Père riche, père pauvre (Robert T. Kiyosaki) (z-lib.org)-1.pdf"
+    file: "Père riche, père pauvre (Robert T. Kiyosaki) (z-lib.org).pdf"
   },
   {
     id: 5,
@@ -58,39 +58,68 @@ const customDocs = [
 ];
 
 const docs = [...customDocs];
-const grid = document.getElementById('grid');
-const search = document.getElementById('search');
+const grid = document.getElementById("grid");
+const search = document.getElementById("search");
 
 function render(list) {
+  if (!grid) return;
+
   grid.innerHTML = list.map(d => `
     <article class="card">
       <div class="pdf">PDF</div>
       <h3>${d.title}</h3>
-      <div class="meta">${d.category} • ${d.price.toLocaleString('fr-FR')} F CFA</div>
-      <button class="buy" onclick="buy(${d.id})">Acheter – 500 F</button>
+      <div class="meta">
+        ${d.category} · ${d.price.toLocaleString("fr-FR")} F CFA
+      </div>
+      <button onclick="buy(${d.id})">
+        Acheter – 500 F
+      </button>
     </article>
-  `).join('');
+  `).join("");
 }
 
 function buy(id) {
-  const d = docs.find(x => x.id == id);
-  document.getElementById('modalContent').innerHTML = `
+  const d = docs.find(x => x.id === id);
+  if (!d) return;
+
+  const modalContent = document.getElementById("modalContent");
+
+  modalContent.innerHTML = `
     <h2>${d.title}</h2>
     <p>Prix : <b>500 F CFA</b></p>
-    <div class="note">Après le paiement Wave, la commande est validée automatiquement par le serveur. Le lien sécurisé du PDF est ensuite envoyé/affiché selon la configuration du site.</div>
-    <a class="pay" href="/api/checkout?product_id=${d.id}">pour d'autres documents veiller nous contacter par WhatsApp</a>
-    <a class="pay" style="background:#111827" target="_blank" href="https://wa.me/2250596037289?text=${encodeURIComponent('Bonjour, je souhaite acheter le ' + d.title + ' pour 500 F CFA.')}">Besoin d'aide sur WhatsApp</a>
+
+    <div class="note">
+      Après le paiement Wave, la commande est validée automatiquement
+      par le serveur. Le client sécurise ensuite son document via WhatsApp.
+    </div>
+
+    <a
+      class="pay"
+      target="_blank"
+      href="https://wa.me/2250596037289?text=${encodeURIComponent(
+        "Bonjour DocStore CI, je souhaite acheter le document : " + d.title
+      )}"
+    >
+      Payer / Commander sur WhatsApp
+    </a>
   `;
-  document.getElementById('modal').classList.remove('hidden');
+
+  document.getElementById("modal").classList.remove("hidden");
 }
 
 function closeModal() {
-  document.getElementById('modal').classList.add('hidden');
+  document.getElementById("modal").classList.add("hidden");
 }
 
-search.addEventListener('input', e => {
+search.addEventListener("input", e => {
   const q = e.target.value.toLowerCase().trim();
-  render(docs.filter(d => (d.title + ' ' + d.category).toLowerCase().includes(q)));
+
+  render(
+    docs.filter(d =>
+      d.title.toLowerCase().includes(q) ||
+      d.category.toLowerCase().includes(q)
+    )
+  );
 });
 
 render(docs);
