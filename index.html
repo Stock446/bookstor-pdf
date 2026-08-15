@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DocStore CI — Documents PDF à 500 F</title>
+  <meta name="description" content="Boutique de documents PDF numériques à 500 F CFA. Paiement Wave et assistance WhatsApp.">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">D</span><div><b>DocStore CI</b><small>Documents PDF numériques</small></div></div>
+  <a class="wa" href="https://wa.me/2250596037289?text=Bonjour%20DocStore%20CI%2C%20j%27ai%20une%20question." target="_blank">WhatsApp</a>
+</header>
+
+<section class="hero">
+  <div>
+    <span class="pill">100+ documents disponibles</span>
+    <h1>Des documents utiles,<br><span>à seulement 500 F CFA.</span></h1>
+    <p>Choisissez votre PDF, payez avec Wave et recevez votre document après confirmation du paiement.</p>
+    <a class="primary" href="#catalogue">Voir les documents</a>
+  </div>
+  <div class="hero-card">
+    <div class="hero-icon">PDF</div>
+    <b>Paiement simple</b>
+    <p>Wave • 500 F CFA / PDF</p>
+    <p>Support client WhatsApp</p>
+  </div>
+</section>
+
+<main id="catalogue">
+  <div class="section-head">
+    <div><h2>Catalogue</h2><p>Chaque document coûte 500 F CFA.</p></div>
+    <input id="search" placeholder="Rechercher un document…" aria-label="Rechercher">
+  </div>
+  <div id="grid" class="grid"></div>
+</main>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal()">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<a class="floating-wa" href="https://wa.me/2250596037289?text=Bonjour%20DocStore%20CI%2C%20je%20contacte%20le%20service%20client." target="_blank">💬</a>
+<footer>© 2026 DocStore CI — Tous droits réservés</footer>
+<script src="/app.js"></script>
+</body>
+</html>
