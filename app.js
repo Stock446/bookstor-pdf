@@ -1,22 +1,64 @@
+
 const customDocs = [
   {
     id: 1,
-    title: "Père riche, père pauvre",
+    title: "L'art du Trading",
+    category: "Finance",
+    price: 500,
+    file: "L'art du Trading.pdf"
+  },
+  {
+    id: 2,
+    title: "Le marketing digital pour les nuls",
+    category: "Marketing",
+    price: 500,
+    file: "Le marketing digital pour les nuls.pdf"
+  },
+  {
+    id: 3,
+    title: "L'Alchimiste - Paulo Coelho",
     category: "Développement personnel",
     price: 500,
-    file: "pere-riche-pere-pauvre.pdf"
+    file: "L’Alchimiste Paulo Coelho﻿.pdf"
+  },
+  {
+    id: 4,
+    title: "Père riche, père pauvre",
+    category: "Finance",
+    price: 500,
+    file: "Père riche, père pauvre (Robert T. Kiyosaki) (z-lib.org)-1.pdf"
+  },
+  {
+    id: 5,
+    title: "Un pied à l'école, un pied dans le business",
+    category: "Business",
+    price: 500,
+    file: "Un pied a l'école un pied dans le business .pdf"
+  },
+  {
+    id: 6,
+    title: "Vivez mieux et plus longtemps",
+    category: "Santé",
+    price: 500,
+    file: "Vivez-mieux-et-plus-longtemps-Michel-Cymes-z-lib.org_.pdf"
+  },
+  {
+    id: 7,
+    title: "L'investisseur intelligent",
+    category: "Finance",
+    price: 500,
+    file: "l'investisseur intelligent (1).pdf"
+  },
+  {
+    id: 8,
+    title: "La chèvre de ma mère",
+    category: "Business",
+    price: 500,
+    file: "la-chevre-de-ma-mere.pdf"
   }
 ];
 
-const generatedDocs = Array.from({length: 99}, (_, i) => ({
-  id: i + 2,
-  title: `Document PDF ${String(i + 2).padStart(3, '0')}`,
-  category: i % 4 === 0 ? 'Formation' : i % 4 === 1 ? 'Business' : i % 4 === 2 ? 'Études' : 'Développement personnel',
-  price: 500
-}));
-
-const docs = [...customDocs, ...generatedDocs];
-
+const docs = [...customDocs];
 const grid = document.getElementById('grid');
 const search = document.getElementById('search');
 
